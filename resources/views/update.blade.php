@@ -46,12 +46,12 @@
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control m-1"  placeholder="Phone Number" name="phone" value="{{$item->phone}}">
-                                <button title="Update Contact" class="fcbtn btn btn-outline btn-success btn-1e btn-xs text-light" type="submit" style="margin-top: 20px; float:right;">
-                                <b>UPDATE</b><i class="ps-1 fa fa-edit"></i>
-                            </button>
-                            <a title="Back to Home" class="fcbtn btn btn-outline btn-danger btn-1e btn-xs text-light me-2" style="margin-top: 20px; float:right;" href="{{route('show.phonebook')}}">
-                                <b>BACK</b><i class="ps-1 fa fa-edit"></i>
-                            </a>
+                                <a title="Update Contact" class="fcbtn btn btn-outline btn-success btn-1e btn-xs text-light" type="submit" style="margin-top: 20px; float:right;">
+                                    <b>UPDATE</b><i class="ps-1 fa fa-edit"></i>
+                                </a>
+                                <a title="Back to Home" class="fcbtn btn btn-outline btn-danger btn-1e btn-xs text-light me-2" style="margin-top: 20px; float:right;" href="{{route('show.phonebook')}}">
+                                    <b>BACK</b><i class="ps-1 fa fa-edit"></i>
+                                </a>
                             </div>    
                         </div>
                     </form>
