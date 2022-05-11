@@ -38,14 +38,16 @@ class PhoneBookController extends Controller
 
     public function update(PhoneRequest $request,$item)
     {
+
+        // dd($item);
         $olddata = $request->validated();
           
-        $newdata = PhoneBook::find($item['id']);
+        $newdata = PhoneBook::find($item);
         $newdata->name = $olddata['name'];
         $newdata->phone = $olddata['phone'];
         $newdata->save();
 
-        return redirect()->view('home');
+        return redirect()->route('show.phonebook');
 
     }
 }
