@@ -23,3 +23,5 @@ Route::get('/', [PhoneBookController::class, 'index'])->name('show.phonebook');
 Route::post('phonebook/store', [PhoneBookController::class, 'store'])->name('store.phonebook');
 
 Route::get('phonebook/{item}/edit', [PhoneBookController::class, 'edit'])->name('edit.phonebook');
+
+Route::post('phonebook/{item}/update', [PhoneBookController::class, 'update'])->name('update.phonebook');

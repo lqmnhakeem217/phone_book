@@ -32,12 +32,20 @@ class PhoneBookController extends Controller
 
     public function edit(PhoneBook $item)
     {
-        dd($item);
-        return view('update', compact($item));
+        // dd($item);
+        return view('update', compact('item'));
     }
 
-    public function update()
+    public function update(PhoneRequest $request,$item)
     {
-        
+        $olddata = $request->validated();
+          
+        $newdata = PhoneBook::find($item['id']);
+        $newdata->name = $olddata['name'];
+        $newdata->phone = $olddata['phone'];
+        $newdata->save();
+
+        return redirect()->view('home');
+
     }
 }
