@@ -47,7 +47,7 @@
                             <div class="col">
                                 <input type="text" class="form-control m-1"  placeholder="Phone Number" name="phone">
                                 <button title="Add Contact" class="fcbtn btn btn-outline btn-info btn-1e btn-xs text-light" type="submit" style="margin-top: 20px; float:right;">
-                                <b>ADD</b><i class="fa fa-user-plus"></i>
+                                <b>ADD</b><i class="fa fa-user-plus ms-1"></i>
                             </button>
                             </div>    
                         </div>
@@ -75,7 +75,7 @@
                             <td>{{ $item->phone }}</td>
                             <td>
                                 <a href="{{ route('edit.phonebook',$item)}}" style="font-size: 18px; padding:3px 8px" class="btn btn-warning" title="Edit Contact"><i class="fa fa-edit"></i></a>
-                                <a href="#" style="font-size: 18px; padding: 3px 8px" class="btn btn-danger btn-xs btn-outline btn-1d btnDel" title="Delete Contact"><i class="fa fa-trash"></i></a>
+                                <a onclick="return confirm('Are you sure?')" href="{{route('delete.phonebook',$item)}}" style="font-size: 18px; padding: 3px 8px" class="btn btn-danger btn-xs btn-outline btn-1d btnDel" title="Delete Contact"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                             @php $count++ @endphp
@@ -87,7 +87,12 @@
                     </tbody>
                 </table>
                 <div style="margin-top: 2px;">{!! $data->links() !!} </div>
-            </div>    
+            </div>
+            <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+                <div class="container text-center">
+                    <small>Copyright &copy; Luqmanul Hakeem Bin Khairul Anuar</small>
+                </div>
+            </footer>    
         </div>
     </body>
 </html>

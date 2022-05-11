@@ -36,18 +36,22 @@ class PhoneBookController extends Controller
         return view('update', compact('item'));
     }
 
-    public function update(PhoneRequest $request,$item)
+    public function update(PhoneRequest $request,PhoneBook $item)
     {
-
-        // dd($item);
-        $olddata = $request->validated();
+        $request->validated();
           
-        $newdata = PhoneBook::find($item);
-        $newdata->name = $olddata['name'];
-        $newdata->phone = $olddata['phone'];
-        $newdata->save();
+        $item->update([
+            'name' => $request->name,
+            'number' => $request->number
+        ]);
 
         return redirect()->route('show.phonebook');
+    }
 
+    public function destroy(PhoneBook $item){
+
+        $item->delete();
+
+        return redirect()->route('show.phonebook');
     }
 }
